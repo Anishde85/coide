@@ -1,0 +1,32 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <div class="header" style="padding: 10px;text-align: center;background: #1abc9c;color: white;font-size:30px;">
+      <h1>Code Editor</h1>
+    </div>
+  </head>
+  <body style="padding:10px;">
+       <form action = "" method = "post">
+        {% csrf_token %}
+        <h6>Language:-</h6>
+        {{form.language}}
+        <div class='row'>
+            <div class="col-md-6">
+                <h4>Code</h4>
+                {{ form.code }}
+            </div>
+            <div class="col-md-3">
+                <h4>Input</h4>
+                {{ form.input }}
+            </div>
+            <div class="col-md-3">
+              <h4>Output</h4>
+              <textarea rows="20" cols="30">{{output}}</textarea>
+            </div>
+        </div>
+       <input type="submit" value="Compile/Run">
+  </body>

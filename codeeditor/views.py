@@ -24,7 +24,10 @@ def TodoListApiView(request):
         }
         r = requests.post(RUN_URL, data=data)
         if r.json()['compile_status']=="OK":
-            return render(request, "index.html", {'form':inp,'output':r.json()['run_status']['output']})
+            if r.json()['run_status']['status']=="AC":
+                return render(request, "index.html", {'form':inp,'output':r.json()['run_status']['output']})
+            else:
+                return render(request, "index.html", {'form': inp, 'output': r.json()['run_status']['status']})
         else:
             return render(request, "index.html", {'form': inp, 'output': r.json()['compile_status']})
     return render(request, "index.html", {'form':inp,'output': ''})

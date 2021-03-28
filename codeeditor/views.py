@@ -12,7 +12,7 @@ def TodoListApiView(request):
         inpu = inp.cleaned_data['input']
         language=inp.cleaned_data['language']
         RUN_URL = u'https://api.hackerearth.com/v3/code/run/'
-        CLIENT_SECRET = '5c50ec0c27f8768c8d7903adf216eb9f0cb730a8'
+        CLIENT_SECRET = '612f7e11975256807400430b72d161eef4c745de'
         data = {
             'client_secret': CLIENT_SECRET,
             'async': 0,

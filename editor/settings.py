@@ -25,7 +25,7 @@ SECRET_KEY = 'iq6bq03ayisv)833p4*6vaw+c9w3g+=v4hv$*n9v%=b!l2%59^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['coide.herokuapp.com']
 CORS_ORIGIN_WHITELIST = [
      'http://localhost:3000'
 ]

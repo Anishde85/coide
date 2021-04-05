@@ -4,12 +4,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">  </head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <div class="header" style="padding: 10px;text-align: center;background: #1abc9c;color: white;font-size:30px;">
-      <h1>Code Editor</h1>
+      <h1>CodeBoard</h1>
     </div>
   </head>
   <body style="padding:10px;">
+       <p id="title">Code Editor</p>
        <form action = "" method = "post">
         {% csrf_token %}
         <h6>Language:-</h6>
@@ -29,4 +32,35 @@
             </div>
         </div>
        <input type="submit" value="Compile/Run">
+       <div id="paintbg">
+        <p id="title">Whiteboard</p>
+          <div id="canvasarea">
+           <canvas id="myCanvas" width="840" height="650" style="border:1.5px solid #000000;"></canvas>
+          </div>
+          <div id="colorpanel">
+            <center><p>Colors</p></center>
+             <div id="contain">
+               <div class="palette red" id="red" onclick="changeColors(this)"></div>
+               <div class="palette orange" id="orange" onclick="changeColors(this)"></div>
+               <div class="palette yellow" id="yellow" onclick="changeColors(this)"></div>
+               <div class="palette green" id="green" onclick="changeColors(this)"></div>
+               <div class="palette blue" id="blue" onclick="changeColors(this)"></div>
+               <div class="palette indigo" id="indigo" onclick="changeColors(this)"></div>
+               <div class="palette purple" id="purple" onclick="changeColors(this)"></div>
+               <div class="palette black" id="black" onclick="changeColors(this)"></div>
+             </div>
+      
+             <div id="erasing"><center><p>Eraser</p></center></div>
+             <div class="palette white" id="erase" onclick="changeColors(this)"></div>
+             <br />
+             <center><p>Brush Width</p></center>
+            <form>
+              <input type="range" id="myRange" name="amountRange" value="1" min="1" max="50" oninput="this.form.amountInput.value=this.value" onclick="lineWidthRange()">
+              <div id="sliderInput">
+                </p><input type="number" name="amountInput" min="1" max="50" value="1" oninput="this.form.amountRange.value=this.value" />
+              </div>
+            </form>
+            <center><button class="button" onclick="erase()">CLEAR</button></center>
+            </div>
+        <script src="{% static 'index.js' %}"></script> 
   </body>

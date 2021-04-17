@@ -1,11 +1,13 @@
 var canvas = document.getElementById('myCanvas');
 var context = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 var isIdle = true;
 var colors;
 var widthline;
 var brushstyle;
 context.fillStyle = "white";
-context.fillRect(0, 0, 700, 500);
+context.fillRect(0, 0, canvas.width, canvas.height);
 lines();
 var removeRectangleInLine = 0;
 function lines() 
@@ -43,27 +45,27 @@ function changeColors(palette) {
 	switch(palette.id) {
 		case "red":
 			colors = "red";
+			widthline=4;
 			break;
 		case "orange":
 			colors = "orange";
+			widthline=4;
 			break;
 		case "blue":
 			colors = "#09C2DB";
-			break;
-		case "indigo":
-			colors = "#0E38AD";
+			widthline=4;
 			break;
 		case "green":
 			colors = "green";
+			widthline=4;
 			break;
 		case "black":
 			colors = "black";
+			widthline=4;
 			break;
 		case "yellow":
 			colors = "yellow";
-			break;
-		case "purple":
-			colors = "#B9509E";
+			widthline=4;
 			break;
 		case "erase":
 			colors = "white";

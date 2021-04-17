@@ -10,8 +10,57 @@
     <div class="header" style="padding: 10px;text-align: center;background: #1abc9c;color: white;font-size:30px;">
       <h1>CodeBoard</h1>
     </div>
+    <style>
+      .nav{
+          background-color:#DCDCDC;
+          position:fixed;
+          right:0;
+          bottom:40%;
+          margin:0px;
+          padding:0px;
+          overflow:hidden;
+      }
+      .nav_items li{
+          padding:10px;
+          cursor:pointer;
+      }
+      #red{
+          color:red;
+      }
+      #blue{
+          color:blue;
+      }
+      #green{
+          color:green;
+      }
+      #black{
+          color:black;
+      }
+      #yellow{
+          color:yellow;
+      }
+      .nav_items li:hover{
+          background-color:#696969;
+      }
+  </style>
+  <script src="https://kit.fontawesome.com/1e2c9bf03f.js" crossorigin="anonymous"></script>
   </head>
   <body style="padding:10px;">
+       <div class="nav">
+        <div class="nav_items">
+          <div id="red" onclick="changeColors(this)"><i class="fas fa-pen"></i></div>
+          <div id="orange" onclick="changeColors(this)"><i class="fas fa-pen"></i></div>
+          <div id="yellow" onclick="changeColors(this)"><i class="fas fa-pen"></i></div>
+          <div id="green" onclick="changeColors(this)"><i class="fas fa-pen"></i></div>
+          <div id="blue" onclick="changeColors(this)"><i class="fas fa-pen"></i></div>
+          <div id="black" onclick="changeColors(this)"><i class="fas fa-pen"></i></div>
+          <div id="erase" onclick="changeColors(this)"><i class="fas fa-eraser"></i></div>
+          <div class="button" onclick="erase()"><i class="fas fa-trash-alt"></i></div>
+        </div>
+       </div>
+       <p id="title">Whiteboard</p>
+       <canvas id="myCanvas" style="border:1.5px solid #000000;">
+       </canvas>
        <p id="title">Code Editor</p>
        <form action = "" method = "post">
         {% csrf_token %}
@@ -32,35 +81,5 @@
             </div>
         </div>
        <input type="submit" value="Compile/Run">
-       <div id="paintbg">
-        <p id="title">Whiteboard</p>
-          <div id="canvasarea">
-           <canvas id="myCanvas" width="840" height="650" style="border:1.5px solid #000000;"></canvas>
-          </div>
-          <div id="colorpanel">
-            <center><p>Colors</p></center>
-             <div id="contain">
-               <div class="palette red" id="red" onclick="changeColors(this)"></div>
-               <div class="palette orange" id="orange" onclick="changeColors(this)"></div>
-               <div class="palette yellow" id="yellow" onclick="changeColors(this)"></div>
-               <div class="palette green" id="green" onclick="changeColors(this)"></div>
-               <div class="palette blue" id="blue" onclick="changeColors(this)"></div>
-               <div class="palette indigo" id="indigo" onclick="changeColors(this)"></div>
-               <div class="palette purple" id="purple" onclick="changeColors(this)"></div>
-               <div class="palette black" id="black" onclick="changeColors(this)"></div>
-             </div>
-      
-             <div id="erasing"><center><p>Eraser</p></center></div>
-             <div class="palette white" id="erase" onclick="changeColors(this)"></div>
-             <br />
-             <center><p>Brush Width</p></center>
-            <form>
-              <input type="range" id="myRange" name="amountRange" value="1" min="1" max="50" oninput="this.form.amountInput.value=this.value" onclick="lineWidthRange()">
-              <div id="sliderInput">
-                </p><input type="number" name="amountInput" min="1" max="50" value="1" oninput="this.form.amountRange.value=this.value" />
-              </div>
-            </form>
-            <center><button class="button" onclick="erase()">CLEAR</button></center>
-            </div>
-        <script src="{% static 'index.js' %}"></script> 
+       <script src="{% static 'index.js' %}"></script> 
   </body>

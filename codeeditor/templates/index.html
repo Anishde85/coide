@@ -42,6 +42,9 @@
       .nav_items li:hover{
           background-color:#696969;
       }
+      body {
+        background-image: url("static/back.jpg");
+      }
   </style>
   <script src="https://kit.fontawesome.com/1e2c9bf03f.js" crossorigin="anonymous"></script>
   </head>
@@ -56,6 +59,7 @@
           <div id="black" onclick="changeColors(this)"><i class="fas fa-pen"></i></div>
           <div id="erase" onclick="changeColors(this)"><i class="fas fa-eraser"></i></div>
           <div class="button" onclick="erase()"><i class="fas fa-trash-alt"></i></div>
+          <a id="download" download="myImage.jpg" href="" onclick="download_img(this);"><i class="fas fa-save"></i></a>
         </div>
        </div>
        <p id="title">Whiteboard</p>

@@ -79,8 +79,3 @@ function lineWidthRange() {
 function erase() {
 	context.clearRect(0, 0, canvas.width, canvas.height);
 };
-download_img = function(el)
-{
-	var imageURI = canvas.toDataURL("image/jpg");
-	el.href = imageURI;
-  };

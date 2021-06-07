@@ -1,7 +1,7 @@
 # coide
 A website to facilitate online teaching of data structures and algorithms with the help of a whiteboard and code editor.
 
-One can demonstrate various algorithms and data structures in the whiteboard.
+One can demonstrate working of various algorithms and data structures in the whiteboard.
 <img align='right' src='https://github.com/Anishde85/coide/blob/main/whiteboard.PNG'>
 
 

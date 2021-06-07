@@ -45,27 +45,27 @@ function changeColors(palette) {
 	switch(palette.id) {
 		case "red":
 			colors = "red";
-			widthline=4;
+			widthline=1;
 			break;
 		case "orange":
 			colors = "orange";
-			widthline=4;
+			widthline=1;
 			break;
 		case "blue":
 			colors = "#09C2DB";
-			widthline=4;
+			widthline=1;
 			break;
 		case "green":
 			colors = "green";
-			widthline=4;
+			widthline=1;
 			break;
 		case "black":
 			colors = "black";
-			widthline=4;
+			widthline=1;
 			break;
 		case "yellow":
 			colors = "yellow";
-			widthline=4;
+			widthline=1;
 			break;
 		case "erase":
 			colors = "white";

@@ -78,6 +78,8 @@ function lineWidthRange() {
 };
 function erase() {
 	context.clearRect(0, 0, canvas.width, canvas.height);
+	context.fillStyle = "white";
+	context.fillRect(0, 0, canvas.width, canvas.height);
 };
 download_img = function(el)
 {

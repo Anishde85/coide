@@ -85,4 +85,13 @@ download_img = function(el)
 {
 	var imageURI = canvas.toDataURL("image/jpg");
 	el.href = imageURI;
-  };
+};
+var draw = document.getElementById('drawer');
+var ed = document.getElementById('editor');
+draw.onclick=()=>{
+	ed.style.right=0;
+}
+var hide = document.getElementById('hide');
+hide.onclick=()=>{
+	ed.style.right="-100%";
+}

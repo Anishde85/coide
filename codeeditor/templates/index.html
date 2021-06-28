@@ -14,10 +14,10 @@
       .nav{
           background-color:#DCDCDC;
           position:fixed;
-          right:0;
+          left:0;
           bottom:40%;
           margin:0px;
-          padding:0px;
+          padding:10px;
           overflow:hidden;
       }
       .nav_items li{
@@ -65,25 +65,33 @@
        <p id="title">Whiteboard</p>
        <canvas id="myCanvas" style="border:1.5px solid #000000;">
        </canvas>
-       <p id="title">Code Editor</p>
-       <form action = "" method = "post">
-        {% csrf_token %}
-        <h6>Language:-</h6>
-        {{form.language}}
-        <div class='row'>
-            <div class="col-md-6">
-                <h4>Code</h4>
-                {{ form.code }}
-            </div>
-            <div class="col-md-3">
-                <h4>Input</h4>
+       <button class="btn btn-success" id="drawer">Open Editor</button>
+       <div id ="editor">
+        <button class="btn btn-success" id="hide">Hide Editor</button>   
+        <div id="editoronly">
+            <p id="title">Code Editor</p>
+            <form action = "" method = "post">
+                {% csrf_token %}
+                <h6><b>Language:-</b></h6>
+                <div class="lang">
+                    {{form.language}}
+                </div>
+            <div class='row'>
+                <div class="col-md-12 code">
+                    <h4><b>Code</b></h4>
+                    {{ form.code }}
+                </div>
+            <div class="col-md-6 input">
+                <h4><b>Input</b></h4>
                 {{ form.input }}
             </div>
-            <div class="col-md-3">
-              <h4>Output</h4>
+            <div class="col-md-6 input">
+              <h4><b>Output</b></h4>
               <textarea rows="20" cols="30">{{output}}</textarea>
             </div>
+            <input type="submit" value="Compile/Run" style="margin-left: 10px;">
         </div>
-       <input type="submit" value="Compile/Run">
+        </div>
+       </div>
        <script src="{% static 'index.js' %}"></script> 
   </body>

@@ -1,8 +1,13 @@
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
+    height: 100vh;
+    overflow-x: hidden;
+    position: relative;
   }
-  
+  ::-webkit-scrollbar{
+    width: 0;
+  }
   a {
     color: black;
     text-decoration: none; 
@@ -14,17 +19,59 @@ body {
     letter-spacing: -2px;
     font-weight: bold;
   }
-  
+
+  #editor{
+    position: fixed;
+    height: 100vh;
+    right:0%;
+    top:0;
+    width:65%;
+    background: #E8F0F2;
+    padding: 10px;
+    transition: all 0.5s;
+  }
+  #editoronly{
+    overflow-y: scroll;
+    height: 100%;
+    padding-left: 10px;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .code textarea{
+    width:100%;
+    background-color: #E8EAE6;
+    font-family:"Times New Roman", Times, serif;  
+    font-size: 15px; 
+  }
+  .input textarea{
+    width:100%;
+    background-color: #E8EAE6;
+    font-family:"Times New Roman", Times, serif;  
+    font-size: 15px;
+  }
+  .lang select{
+    background-color: #98DED9;
+    font-family:"Times New Roman", Times, serif; 
+  }
+  #drawer{
+    position: absolute;
+    right:0;
+    top:40%;
+  }
   #erasing {
     height: 20px;
     margin-bottom: 13px;
   }
-  
+  #hide{
+    position: absolute;
+    left:-100px;
+    top:40%;
+    z-index: 10;
+  }
   #contain {
     padding-left: 13px;
     height: 95px;
   }
-  
   .palette {
     width: 23px;
     height: 23px;
